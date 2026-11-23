@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -2276,8 +2276,8 @@
 </tr>
 <tr>
 <td>aiUnitSupplyModifier</td>
-<td>Integer</td>
-<td>5</td>
+<td>Float</td>
+<td>0</td>
 <td></td>
 </tr>
 <tr>
@@ -2733,10 +2733,10 @@ Incompatibility filtering works so far between extension and base mods, but feel
 <td>Mod-wide specials, <a href="../../uniques/#modoptions-uniques">see here</a></td>
 </tr>
 <tr>
-<td>techsToRemove</td>
+<td>beliefsToRemove</td>
 <td>List</td>
 <td>empty</td>
-<td>List of <a href="../2-Civilization-related-JSON-files/#techsjson">Technologies</a> or <a href="../../Unique-parameters/#technologyfilter">technologyFilter</a> to remove (isBaseRuleset=false only)</td>
+<td>List of <a href="../2-Civilization-related-JSON-files/#beliefsjson">Beliefs</a> or beliefFilter (matches name, type, "All" or a filtering Unique) to remove (isBaseRuleset=false only)</td>
 </tr>
 <tr>
 <td>buildingsToRemove</td>
@@ -2745,16 +2745,40 @@ Incompatibility filtering works so far between extension and base mods, but feel
 <td>List of <a href="../2-Civilization-related-JSON-files/#buildingsjson">Buildings or Wonders</a> or <a href="../../Unique-parameters/#buildingfilter">buildingFilter</a> to remove (isBaseRuleset=false only)</td>
 </tr>
 <tr>
-<td>unitsToRemove</td>
+<td>cityStateTypesToRemove</td>
 <td>List</td>
 <td>empty</td>
-<td>List of <a href="../4-Unit-related-JSON-files/#unitsjson">Units</a> or <a href="../../Unique-parameters/#baseunitfilter">unitFilter</a> to remove (isBaseRuleset=false only)</td>
+<td>List of Citystate Types or "All" to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>difficultiesToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Difficulties or "All" to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>eventsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of List of Events or "All" to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>improvementsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of List of Tile Improvements or <a href="../../Unique-parameters/#improvementFilter">improvementFilter</a> to remove (isBaseRuleset=false only).</td>
 </tr>
 <tr>
 <td>nationsToRemove</td>
 <td>List</td>
 <td>empty</td>
 <td>List of <a href="../2-Civilization-related-JSON-files/#nationsjson">Nations</a> or <a href="../../Unique-parameters/#nationfilter">nationFilter</a> to remove (isBaseRuleset=false only)</td>
+</tr>
+<tr>
+<td>personalitiesToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Leader Personalities or "All" to remove (isBaseRuleset=false only).</td>
 </tr>
 <tr>
 <td>policyBranchesToRemove</td>
@@ -2769,16 +2793,88 @@ Incompatibility filtering works so far between extension and base mods, but feel
 <td>List of <a href="../2-Civilization-related-JSON-files/#policiesjson">Policies</a> to remove (isBaseRuleset=false only)</td>
 </tr>
 <tr>
-<td>beliefsToRemove</td>
+<td>questsToRemove</td>
 <td>List</td>
 <td>empty</td>
-<td>List of <a href="../2-Civilization-related-JSON-files/#beliefsjson">Beliefs</a> to remove (isBaseRuleset=false only)</td>
+<td>List of Citystate Quest names or "All" to remove (isBaseRuleset=false only).</td>
 </tr>
 <tr>
 <td>religionsToRemove</td>
 <td>List</td>
 <td>empty</td>
-<td>List of <a href="../2-Civilization-related-JSON-files/#religionsjson">Religions</a> to remove (isBaseRuleset=false only)</td>
+<td>List of <a href="../2-Civilization-related-JSON-files/#religionsjson">Religions</a> or "All" to remove (isBaseRuleset=false only)</td>
+</tr>
+<tr>
+<td>resourcesToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Tile Resources or <a href="../../Unique-parameters/#resourceFilter">resourceFilter</a> to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>ruinRewardsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Ruin Rewards or "All" to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>specialistsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Specialists or "All" to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>speedsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Game Speeds or "All" to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>techsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of <a href="../2-Civilization-related-JSON-files/#techsjson">Technologies</a> or <a href="../../Unique-parameters/#technologyfilter">technologyFilter</a> to remove (isBaseRuleset=false only)</td>
+</tr>
+<tr>
+<td>terrainsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Terrains or <a href="../../Unique-parameters/#terrainFilter">terrainFilter</a> to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>tutorialsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Tutorials or "All" to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>unitsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of <a href="../4-Unit-related-JSON-files/#unitsjson">Units</a> or <a href="../../Unique-parameters/#baseunitfilter">unitFilter</a> to remove (isBaseRuleset=false only)</td>
+</tr>
+<tr>
+<td>unitNameGroupsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Unit-name Groups or "All" to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>unitPromotionsToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Unit Promotions or "All" to remove (isBaseRuleset=false only).</td>
+</tr>
+<tr>
+<td>unitTypesToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Unit Types or <a href="../../Unique-parameters/#unitTypeFilter">unitTypeFilter</a> to remove (isBaseRuleset=false only). Note dependent units are not automatically removed as well.</td>
+</tr>
+<tr>
+<td>victoriesToRemove</td>
+<td>List</td>
+<td>empty</td>
+<td>List of Victories or "All" to remove (isBaseRuleset=false only).</td>
 </tr>
 <tr>
 <td>constants</td>
@@ -2800,6 +2896,18 @@ Incompatibility filtering works so far between extension and base mods, but feel
 </tr>
 </tbody>
 </table>
+<p>Note that removal happens before adding new content from your mod, so an "All" filter won't kill your content too.</p>
+<p>Policies with their branches and Technologies have more complex removal rules.</p>
+<ul>
+<li>Removing Policy Branches removes their member Policies as well.</li>
+<li>Overriding a Policy Branch will remove existing member Policies.</li>
+<li>Removing all techs from a TechColumn will also remove that column.</li>
+<li>Adding techs will merge columns by their <code>columnNumber</code>.</li>
+<li>Adding tech columns outside the existing ones is allowed: Replacing a column that was removed, or placing a column before (using negative <code>columnNumber</code>) or after the existing ones.</li>
+<li>After tech removal and merge is done, TechColumns are resorted and renumbered so <code>columnNumber</code> is monotonous, contiguous ands starts at 0.</li>
+</ul>
+<p>Removing religions will clean those from the preferred religions of nations.</p>
+<p>Otherwise, no interdependencies are handled automatically, and your mod may easily fail validation unless you're careful.</p>
 <p>The values normally set automatically from github metadata are:</p>
 <table>
 <thead>
@@ -2911,19 +3019,19 @@ and city distance in another. In case of conflicts, there is no guarantee which 
 <td>baseCityBombardRange</td>
 <td>Int</td>
 <td>2</td>
-<td>[^S]</td>
+<td>[^X]</td>
 </tr>
 <tr>
 <td>cityWorkRange</td>
 <td>Int</td>
 <td>3</td>
-<td>[^T]</td>
+<td>[^Y]</td>
 </tr>
 <tr>
 <td>cityExpandRange</td>
 <td>Int</td>
 <td>5</td>
-<td>[^U]</td>
+<td>[^Z]</td>
 </tr>
 <tr>
 <td>cityAirUnitCapacity</td>
@@ -2970,14 +3078,8 @@ and city distance in another. In case of conflicts, there is no guarantee which 
 <tr>
 <td>ancientRuinCountMultiplier</td>
 <td>Float</td>
-<td>0.02</td>
+<td>0.025</td>
 <td>[^F]</td>
-</tr>
-<tr>
-<td>spawnIceBelowTemperature</td>
-<td>Float</td>
-<td>-0.8</td>
-<td>[^G]</td>
 </tr>
 <tr>
 <td>maxLakeSize</td>
@@ -3030,7 +3132,7 @@ and city distance in another. In case of conflicts, there is no guarantee which 
 <tr>
 <td>workboatAutomationSearchMaxTiles</td>
 <td>Int</td>
-<td>20</td>
+<td>37</td>
 <td>[^M]</td>
 </tr>
 <tr>
@@ -3099,9 +3201,9 @@ and city distance in another. In case of conflicts, there is no guarantee which 
     defensiveBuildingStrength
     where %techs is the percentage of techs in the tech tree that are complete
     If no techs exist in this ruleset, %techs = 0.5 (=50%)</li>
-<li>[^S]: The distance that cities can attack. Minimum 0.</li>
-<li>[^T]: The tiles in distance that population in cities can work on. Note: Higher values may lead to performace issues and may cause bugs. cityWorkRange may be greater than cityExpandRange. Minimum 1, maximum 100.</li>
-<li>[^U]: The distance that cities can expand their borders to. Note: Higher values may lead to performace issues and may cause bugs. Minimum 1, maximum 100.</li>
+<li>[^X]: The distance that cities can attack. Minimum 0.</li>
+<li>[^Y]: The tiles in distance that population in cities can work on. Note: Higher values may lead to performace issues and may cause bugs. cityWorkRange may be greater than cityExpandRange. Minimum 1, maximum 100.</li>
+<li>[^Z]: The distance that cities can expand their borders to. Note: Higher values may lead to performace issues and may cause bugs. Minimum 1, maximum 100.</li>
 <li>[^C]: Formula for Unit Supply:
     Supply = unitSupplyBase (difficulties.json)
     unitSupplyPerCity * amountOfCities + (difficulties.json)
@@ -3115,7 +3217,6 @@ and city distance in another. In case of conflicts, there is no guarantee which 
     Minimum 0.</li>
 <li>[^E]: NaturalWonderGenerator uses these to determine the number of Natural Wonders to spawn for a given map size. The number scales linearly with map radius: #wonders = radius * naturalWonderCountMultiplier + naturalWonderCountAddedConstant. The defaults effectively mean Tiny - 1, Small - 2, Medium - 3, Large - 4, Huge - 5, Custom radius &gt;=109 - all G&amp;K wonders.</li>
 <li>[^F]: MapGenerator.spreadAncientRuins: number of ruins = suitable tile count * this</li>
-<li>[^G]: MapGenerator.spawnIce: spawn Ice where T &lt; this, with T calculated from temperatureExtremeness, latitude and perlin noise.</li>
 <li>[^H]: MapGenerator.spawnLakesAndCoasts: Water bodies up to this tile count become Lakes</li>
 <li>[^I]: RiverGenerator: river frequency and length bounds</li>
 <li>[^J]: A <a href="#unitupgradecost">UnitUpgradeCost</a> sub-structure.</li>
@@ -3130,7 +3231,7 @@ and city distance in another. In case of conflicts, there is no guarantee which 
 <li>[^S]: If set, the Improvement picker will silently skip improvements whose tech requirement is more advanced than your current Era + this value. Example: With a 0, Trade posts will not show until the Medieval Era, with a 1 they will already show in the CLassical Era.</li>
 <li>[^T]: The multiplier of the gold value of a one-sided trade to be stored as gifts.</li>
 <li>[^U]: The multiplier of the gold value of a regular trade to be stored as gifts. Set to 0 to disable gold gifting in two-sided trades.</li>
-<li>[^U]: Modifies how quickly the GaveUsGifts dimplomacy modifier runs out. A higher value makes it run out quicker. Normally the gifts reduced by ~2.5% per turn depending on the diplomatic relations with the default value.</li>
+<li>[^V]: Modifies how quickly the GaveUsGifts dimplomacy modifier runs out. A higher value makes it run out quicker. Normally the gifts reduced by ~2.5% per turn depending on the diplomatic relations with the default value.</li>
 <li>[^W]: Number of air units that can be stationed in a city, not including carried/transported air units.</li>
 </ul>
 <h4 id="unitupgradecost">UnitUpgradeCost</h4>
@@ -3594,10 +3695,10 @@ Effectively, the <code>«»</code> markers are replaced with <code>[]</code> <em
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

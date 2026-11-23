@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -2037,7 +2037,7 @@
 </ol>
 <p>When you ask to 'edit' a file in yairm210/Unciv, these stages happen <em>automatically</em> - but it's important to understand what's happening behind the scenes do you understand where the changes actually are!</p>
 <h2 id="help-theres-a-red-x-next-to-my-pr">Help! There's a <span style="color:red">red "x"</span> next to my PR!</h2>
-<p>Unciv automatically runs unit tests on every PR or push adding commits (inless you're new, in which case someone needs to start the workflows).
+<p>Unciv automatically runs unit tests on every PR or push adding commits (unless you're new, in which case someone needs to start the workflows).
 These contain checks for the rules already described here - a failure means either you didn't follow all the rules (see <a href="#pitfalls">Pitfalls</a>), or problems outside your control.</p>
 <p>To see what went wrong, open your PR, look for the "failing check" entry under "Some checks were not successful", and click the "..." menu and "View details" (or look for the red "x" near a commit ID and click that).
 <img alt="image" src="../../assets/Failing-checks.png" />
@@ -2077,6 +2077,7 @@ A language file can activate a "trick", where combinations of codepoints that sh
 which is created on the fly in the <a href="https://en.wikipedia.org/wiki/Private_Use_Areas">Private Use Area</a> defined by Unicode.</p>
 <p>To activate this feature, set <code>diacritics_support = true</code> in your translation. There are a few additional "settings" - translation lines where the "translation" is some control instruction instead.
 All of these are optional, though your language may show glitches unless you define some. For example, Bangla <em>needs</em> a definition for U+09CD, where the Unicode category does not fully define the required behaviour.</p>
+<p>These are overrides, omitting them determines processing from Unicode character classes. Note that "left" and "right" mean "this should be processed together with the preceding codepoint in the string", and "this should be processed together with the following codepoint in the string", respectively. You can't derive that order from how a text looks in an editor.</p>
 <p>Each of the following definitions represents zero or more characters, and can simply list them as one string.
 For readability, they can also be quoted (" surrounding the entire definition), characters can be separated by spaces, or you can use standard "U+xxxx" representations (these need space separators).
 These entries, unlike the rest of a translation file, also support entry-specific comments: After the code(s), from a '#' to the end of the line.
@@ -2164,10 +2165,10 @@ Thus a code specified in <code>left_and_right_joiners</code> can be in the "Mn" 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>
